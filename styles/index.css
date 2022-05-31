@@ -1,0 +1,211 @@
+/* ---------------------- */
+/* Fonts                  */
+/* ---------------------- */
+
+/* ---------------------- */
+/* Custom properties      */
+/* ---------------------- */
+
+:root {
+  --clr-green: #5f9341;
+  --clr-green-alpha: rgba(95, 147, 65, 0.07);
+
+  --ff-main: Arial, Helvetica, sans-serif;
+}
+
+/* ---------------------- */
+/* Reset                  */
+/* ---------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+/* Make image easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Make form elements easier to work with */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  padding: 0.75em;
+  /* minimun size to extension popup NOT RENSONSIVE   width: min(400px, 90%);  */
+  min-width: 400px;
+  font-family: var(--ff-main);
+}
+
+/* ---------------------- */
+/* Typography             */
+/* ---------------------- */
+
+ul {
+  margin-top: 0.5em;
+  list-style: none;
+  padding-left: 0;
+  font-family: var(--ff-main);
+}
+
+li > a {
+  color: var(--clr-green);
+}
+
+footer {
+  padding: 2em;
+}
+
+/* ---------------------- */
+/* Utility classes        */
+/* ---------------------- */
+
+/* Underline animation classes */
+
+.underline-animation {
+  position: relative;
+  text-decoration: none;
+}
+
+.underline-animation:hover,
+.underline-animation:focus {
+  color: var(--clr-green);
+}
+
+.underline-animation::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 1px;
+  bottom: -1px;
+  left: 0;
+  background-color: var(--clr-green);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-in-out;
+}
+
+.underline-animation:hover::before,
+.underline-animation:focus::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* ---------------------- */
+/* Buttons                */
+/* ---------------------- */
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  gap: 5px;
+}
+
+.btn {
+  background-color: var(--clr-green);
+  color: #fff;
+  font-family: var(--ff-main);
+  font-weight: bold;
+  padding: 0.5em 0.75em;
+  border: 1px solid var(--clr-green);
+  margin: 0.5em 0;
+  cursor: pointer;
+  transition: all 450ms;
+}
+
+.btn:hover,
+.btn:focus {
+  box-shadow: 0 1px 2px var(--clr-green-alpha), 0 2px 4px var(--clr-green-alpha),
+    0 4px 8px var(--clr-green-alpha), 0 8px 16px var(--clr-green-alpha),
+    0 16px 32px var(--clr-green-alpha), 0 32px 64px var(--clr-green-alpha);
+}
+
+#delete-btn {
+  background-color: #fff;
+  color: var(--clr-green);
+}
+
+/* ---------------------- */
+/* Components             */
+/* ---------------------- */
+
+.hero {
+  background-color: var(--clr-green);
+  padding: 1em;
+  color: #fff;
+  margin: 0.5em 0;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  /* -webkit-text-fill-color: var(--clr-green); 
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #fff;  */
+}
+
+.hero__lead {
+  font-weight: bolder;
+}
+
+input {
+  min-width: 100%;
+  padding: 0.5em;
+  box-sizing: border-box;
+  border: 1px solid var(--clr-green);
+}
+
+/* footer */
+
+.attribution {
+  font-family: var(--ff-main);
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  text-decoration: none;
+  color: hsl(228, 45%, 44%);
+}
+
+/* ---------------------- */
+/* Media queries          */
+/* ---------------------- */
+
+/* @media (min-width: 520px) {
+  
+} */
